@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqk4fiomr7gn8"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_nrrx0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pky8d"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_nrrx0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 200.0
+offset_top = -85.5
+offset_right = 202.0
+offset_bottom = 85.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_pky8d")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = -85.5
+offset_right = 300.0
+offset_bottom = 85.5
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button_start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Iniciar"
+flat = true
+
+[node name="Button_load" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Carregar"
+flat = true
+
+[node name="Button_options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Opções"
+flat = true
+
+[node name="Button_extras" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Extras"
+flat = true
+
+[node name="Button_quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_load" to="." method="_on_button_load_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_options" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_extras" to="." method="_on_button_extras_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_quit" to="." method="_on_button_quit_pressed"]
