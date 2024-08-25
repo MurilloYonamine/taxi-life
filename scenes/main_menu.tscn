@@ -1,70 +1,240 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqk4fiomr7gn8"]
+[gd_scene load_steps=6 format=3 uid="uid://dqk4fiomr7gn8"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_nrrx0"]
+[ext_resource type="AudioStream" uid="uid://dqb87kq4ctfo1" path="res://audios/sfx/placeholder-sfx.wav" id="2_75ncx"]
+[ext_resource type="AudioStream" uid="uid://c8qd101700atk" path="res://audios/music/placeholder-music.mp3" id="2_efeck"]
+[ext_resource type="Texture2D" uid="uid://ckai4ttnv4sj3" path="res://images/placeholder-menu.jpeg" id="2_sqhrk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pky8d"]
 bg_color = Color(1, 1, 1, 1)
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
 script = ExtResource("1_nrrx0")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 2
-offset_left = 200.0
-offset_top = -85.5
-offset_right = 202.0
-offset_bottom = 85.5
-theme_override_styles/panel = SubResource("StyleBoxFlat_pky8d")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Backgrounds" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 200.0
-offset_top = -85.5
-offset_right = 300.0
-offset_bottom = 85.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Placeholder-menu" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(947, 319)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_sqhrk")
+
+[node name="ColorRect" type="ColorRect" parent="Backgrounds"]
+layout_mode = 2
+offset_right = 500.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Main Buttons" type="Control" parent="Backgrounds/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Backgrounds/ColorRect/Main Buttons"]
+layout_mode = 2
+offset_left = -75.0
+offset_top = -133.0
+offset_right = -73.0
+offset_bottom = 133.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pky8d")
+
+[node name="MarginContainer" type="MarginContainer" parent="Backgrounds/ColorRect/Main Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -133.0
+offset_right = 67.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Backgrounds/ColorRect/Main Buttons/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="Button_start" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button_start" type="Button" parent="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Iniciar"
 flat = true
 
-[node name="Button_load" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button_load" type="Button" parent="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Carregar"
 flat = true
 
-[node name="Button_options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button_options" type="Button" parent="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Opções"
 flat = true
 
-[node name="Button_extras" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button_extras" type="Button" parent="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Extras"
 flat = true
 
-[node name="Button_quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button_quit" type="Button" parent="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Sair"
 flat = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_start" to="." method="_on_button_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_load" to="." method="_on_button_load_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_options" to="." method="_on_button_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_extras" to="." method="_on_button_extras_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_quit" to="." method="_on_button_quit_pressed"]
+[node name="Audio Menu" type="Control" parent="Backgrounds/ColorRect"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Backgrounds/ColorRect/Audio Menu"]
+layout_mode = 2
+offset_left = -145.0
+offset_top = -118.0
+offset_right = -143.0
+offset_bottom = 118.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pky8d")
+
+[node name="MarginContainer" type="MarginContainer" parent="Backgrounds/ColorRect/Audio Menu"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -118.0
+offset_right = 135.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer"]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Audio Tittle Label" type="Label" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Audio"
+
+[node name="GridContainer" type="GridContainer" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="Master Label" type="Label" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Master:"
+
+[node name="Master Slider" type="HSlider" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Music Label" type="Label" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Music: "
+
+[node name="Music Slider" type="HSlider" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFX Label" type="Label" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "SFX:"
+
+[node name="SFX Slider" type="HSlider" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Comeback Button" type="Button" parent="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Voltar"
+flat = true
+alignment = 0
+text_direction = 1
+
+[node name="Music Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_efeck")
+autoplay = true
+bus = &"Music"
+
+[node name="Button_audio_test" type="Button" parent="."]
+offset_left = 87.0
+offset_top = 519.0
+offset_right = 169.0
+offset_bottom = 550.0
+text = "Teste SFX"
+flat = true
+
+[node name="button_audio" type="AudioStreamPlayer" parent="Button_audio_test"]
+stream = ExtResource("2_75ncx")
+bus = &"SFX"
+
+[connection signal="pressed" from="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer/Button_start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer/Button_load" to="." method="_on_button_load_pressed"]
+[connection signal="pressed" from="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer/Button_options" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer/Button_extras" to="." method="_on_button_extras_pressed"]
+[connection signal="pressed" from="Backgrounds/ColorRect/Main Buttons/MarginContainer/VBoxContainer/Button_quit" to="." method="_on_button_quit_pressed"]
+[connection signal="value_changed" from="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/GridContainer/Master Slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/GridContainer/Music Slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/GridContainer/SFX Slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Backgrounds/ColorRect/Audio Menu/MarginContainer/VBoxContainer/Comeback Button" to="." method="_on_comeback_button_pressed"]
+[connection signal="pressed" from="Button_audio_test" to="." method="_on_button_audio_test_pressed"]
