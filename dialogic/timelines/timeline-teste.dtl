@@ -1,6 +1,3 @@
-join main-character 1
-join npc-character 3
-
 npc-character: Olá! Como você está hoje?
 - Estou ótimo, obrigado! E você?
 	main-character: Estou bem, obrigado por perguntar. O que você tem feito recentemente?

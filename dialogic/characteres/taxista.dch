@@ -8,22 +8,12 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "default-portrait",
+"default_portrait": "",
 "description": "",
-"display_name": "main-character",
+"display_name": "Taxista",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {
-"default-portrait": {
-"export_overrides": {
-"image": "\"res://icon.svg\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 0.7,
-"scene": ""
-}
-},
+"portraits": {},
 "scale": 1.0
 }
