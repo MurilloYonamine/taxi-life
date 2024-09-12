@@ -10,8 +10,9 @@ config_version=5
 
 [application]
 
-config/name="taxi-life"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/name="Taxi Life"
+run/main_scene="res://scenes/main_menu.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,15 +22,18 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"luana": "res://dialogic/characters/luana.dch",
-"namorado": "res://dialogic/characters/namorado.dch",
-"taxista": "res://dialogic/characters/taxista.dch"
+"luana": "res://dialogic/characteres/luana.dch",
+"namorado": "res://dialogic/characteres/namorado.dch",
+"taxista": "res://dialogic/characteres/taxista.dch"
 }
 directories/dtl_directory={
 "luana-timeline": "res://dialogic/timelines/chapter_1/luana-timeline.dtl"
 }
+glossary/default_case_sensitive=true
+layout/style_list=["res://dialogic/styles/test.tres"]
+layout/default_style="res://dialogic/styles/test.tres"
 variables={}
-text/letter_speed=0.03
+text/letter_speed=0.07
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -45,24 +49,21 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
-text/autocolor_names=false
 text/autopauses={}
+text/autoadvance_enabled=false
 history/simple_history_enabled=true
-history/full_history_enabled=false
-history/visited_event_history_enabled=false
-history/save_on_autosave=false
-history/save_on_save=false
-timer/process_in_physics=false
-layout/style_list=["res://dialogic/styles/default_style.tres"]
-layout/default_style="res://dialogic/styles/default_style.tres"
-glossary/default_case_sensitive=true
+history/visited_event_history_enabled=true
+text/autocolor_names=true
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
+
+[dotnet]
+
+project/assembly_name="Taxi Life"
 
 [editor_plugins]
 
@@ -84,3 +85,4 @@ dialogic_default_action={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
