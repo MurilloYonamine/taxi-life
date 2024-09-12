@@ -1,0 +1,13 @@
+[style name="default-style"]
+taxista: Mãe, bom dia!
+mae: Bom dia? Você já conseguiu o emprego que tanto falava?
+mae: Você sabe que nossa situação não é boa, e mesmo assim insistiu em fazer essa tal faculdade de Ciência da Computação.
+mae: Eu não sei quem te convenceu de que essa 'ciência' daria dinheiro.
+mae: Eu não acredito que desperdicei tanto com seus estudos para você acabar assim, sem trazer uma vida melhor para mim e para você...
+taxista: Mãe, eu consegui um emprego!
+mae: Oh, sério?! Finalmente você vai trazer um pouco de alegria para essa casa! Estou tão contente que você vai deixar de ser um quase vagabundo. Mas e aí? Quanto você vai ganhar? Você disse que esse curso te garantiria um bom salário.
+taxista: Na verdade... Eu não tenho um salário fixo e não estou trabalhando com o que eu realmente quero. Estou empregado como taxista.
+mae: ...
+taxista: ...
+taxista: Tenho que desligar agora, mãe.
+jump c1-nicole_introduction/

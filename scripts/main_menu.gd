@@ -12,7 +12,7 @@ extends Control
 
 func _on_button_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
-	Dialogic.start("res://dialogic/timelines/chapter_1/luana-timeline.dtl")
+	Dialogic.start("res://dialogic/timelines/chapter_1/c1-mom_call.dtl")
 	
 func _on_button_load_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/load_menu.tscn")

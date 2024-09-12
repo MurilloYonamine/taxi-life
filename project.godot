@@ -22,16 +22,20 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"erick": "res://dialogic/characteres/erick.dch",
 "luana": "res://dialogic/characteres/luana.dch",
+"mae": "res://dialogic/characteres/mae.dch",
 "namorado": "res://dialogic/characteres/namorado.dch",
+"nicole": "res://dialogic/characteres/nicole.dch",
 "taxista": "res://dialogic/characteres/taxista.dch"
 }
 directories/dtl_directory={
-"luana-timeline": "res://dialogic/timelines/chapter_1/luana-timeline.dtl"
+"c1-mom_call": "res://dialogic/timelines/chapter_1/c1-mom_call.dtl",
+"c1-nicole_introduction": "res://dialogic/timelines/chapter_1/c1-nicole_introduction.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogic/styles/test.tres"]
-layout/default_style="res://dialogic/styles/test.tres"
+layout/style_list=["res://dialogic/styles/default-style.tres"]
+layout/default_style="res://dialogic/styles/default-style.tres"
 variables={}
 text/letter_speed=0.07
 text/initial_text_reveal_skippable=true
